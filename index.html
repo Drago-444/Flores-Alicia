@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Año Especial - 21 de Septiembre</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #fff8e1, #ffecb3, #ffd54f);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            background: rgba(255, 253, 231, 0.95);
+            padding: 40px 30px;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(140, 110, 0, 0.25),
+                        0 0 0 4px #ffd54f,
+                        0 0 0 8px rgba(140, 110, 0, 0.15);
+            backdrop-filter: blur(5px);
+            position: relative;
+            z-index: 2;
+            margin: 0 auto;
+        }
+        
+        .header {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #ffd54f, #ffc107, #ffd54f);
+            border-radius: 3px;
+        }
+        
+        h1 {
+            color: #5d4037;
+            margin-bottom: 10px;
+            font-weight: 700;
+            font-size: 32px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .date {
+            color: #8d6e63;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        
+        .lock-container {
+            position: relative;
+            margin: 40px auto;
+            width: 180px;
+            height: 200px;
+            perspective: 800px;
+        }
+        
+        .lock-body {
+            position: absolute;
+            width: 140px;
+            height: 120px;
+            background: linear-gradient(145deg, #ffc107, #ffd54f, #ffc107);
+            border-radius: 15px;
+            box-shadow: 0 10px 0 #e65100, 
+                        inset 0 -5px 0 rgba(230, 81, 0, 0.5),
+                        0 0 20px rgba(255, 193, 7, 0.6);
+            border: 3px solid #5d4037;
+            top: 60px;
+            left: 20px;
+            z-index: 2;
+            transform-style: preserve-3d;
+            transform: translateZ(10px);
+        }
+        
+        .lock-shackle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 12px solid #5d4037;
+            border-top: 12px solid transparent;
+            border-radius: 50%;
+            top: -20px;
+            left: 40px;
+            transform-origin: top center;
+            animation: lockShake 3s infinite ease-in-out;
+            z-index: 1;
+            box-shadow: 0 5px 0 #3e2723, 
+                        inset 0 -10px 0 rgba(62, 39, 35, 0.3);
+        }
+        
+        .lock-shackle::before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 30px;
+            background: #ffd54f;
+            top: -12px;
+            left: 30px;
+            border: 3px solid #5d4037;
+            border-radius: 5px;
+        }
+        
+        @keyframes lockShake {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+        
+        .keyhole {
+            position: absolute;
+            width: 30px;
+            height: 40px;
+            background: #5d4037;
+            border-radius: 15px;
+            top: 85px;
+            left: 75px;
+            z-index: 3;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .keyhole::after {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 20px;
+            background: #ffd54f;
+            border-radius: 7px;
+            top: 10px;
+            left: 7.5px;
+        }
+        
+        .input-container {
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        input {
+            width: 100%;
+            padding: 18px 25px;
+            border: 3px solid #ffd54f;
+            border-radius: 15px;
+            font-size: 22px;
+            text-align: center;
+            outline: none;
+            transition: all 0.4s;
+            background: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            color: #5d4037;
+            box-shadow: 0 5px 15px rgba(140, 110, 0, 0.2);
+        }
+        
+        input::placeholder {
+            color: #bcaaa4;
+            font-weight: 500;
+        }
+        
+        input:focus {
+            border-color: #ffab00;
+            box-shadow: 0 0 20px rgba(255, 171, 0, 0.5),
+                        inset 0 0 10px rgba(255, 235, 159, 0.3);
+            transform: scale(1.02);
+        }
+        
+        button {
+            background: linear-gradient(to right, #ffc107, #ff9800);
+            color: #5d4037;
+            border: none;
+            padding: 18px 35px;
+            border-radius: 15px;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s;
+            box-shadow: 0 8px 0 #e65100, 
+                        0 15px 25px rgba(230, 81, 0, 0.35);
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #5d4037;
+        }
+        
+        button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 0 #e65100, 
+                        0 20px 30px rgba(230, 81, 0, 0.4);
+        }
+        
+        button:active {
+            transform: translateY(2px);
+            box-shadow: 0 5px 0 #e65100, 
+                        0 10px 20px rgba(230, 81, 0, 0.3);
+        }
+        
+        button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: all 0.4s;
+            z-index: 1;
+        }
+        
+        button:hover::before {
+            left: 100%;
+        }
+        
+        .message {
+            margin-top: 25px;
+            color: #e65100;
+            font-weight: 600;
+            min-height: 30px;
+            font-size: 18px;
+            transition: all 0.4s;
+        }
+        
+        .hint {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #8d6e63;
+            font-style: italic;
+        }
+        
+        .unlocked .lock-shackle {
+            animation: unlock 1.2s forwards;
+        }
+        
+        @keyframes unlock {
+            0% { transform: rotate(0); }
+            50% { transform: rotate(65deg); }
+            100% { transform: rotate(45deg); top: -15px; }
+        }
+        
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: #ffab00;
+            opacity: 0;
+            animation: floatHeart 10s linear infinite;
+        }
+        
+        @keyframes floatHeart {
+            0% {
+                top: 100%;
+                opacity: 0;
+                transform: translateX(0) rotate(0deg);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                top: -10%;
+                opacity: 0;
+                transform: translateX(30px) rotate(360deg);
+            }
+        }
+        
+        .sun {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            width: 80px;
+            height: 80px;
+            background: #ffd54f;
+            border-radius: 50%;
+            box-shadow: 0 0 40px #ffc107, 
+                        0 0 80px #ffc107,
+                        0 0 120px rgba(255, 193, 7, 0.5);
+            animation: pulseSun 4s infinite alternate;
+        }
+        
+        @keyframes pulseSun {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        
+        .footer {
+            margin-top: 30px;
+            color: #8d6e63;
+            font-size: 14px;
+        }
+        
+        /* Efectos de confeti */
+        .confetti {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            background-color: #ffd54f;
+            opacity: 0;
+            z-index: 1000;
+            border-radius: 2px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 26px;
+            }
+            
+            .lock-container {
+                transform: scale(0.9);
+            }
+            
+            input, button {
+                font-size: 18px;
+                padding: 15px 20px;
+            }
+            
+            .sun {
+                top: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="hearts"></div>
+    <div class="sun"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Ingresa el año que nos conocimos</h1>
+        </div>
+        
+        <div class="lock-container">
+            <div class="lock-body"></div>
+            <div class="lock-shackle"></div>
+            <div class="keyhole"></div>
+        </div>
+        
+        <div class="input-container">
+            <input type="password" id="yearInput" placeholder="****" inputmode="numeric">
+            <p class="message" id="message"></p>
+        </div>
+        
+        <button id="unlockBtn">
+            <i class="fas fa-lock-open"></i> Abrir Candado
+        </button>
+        
+        <p class="hint">Pista: Es el año cuando nos vimos la primera vez💛</p>
+        <p class="footer">Solo para ti, por el día día especial</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearInput = document.getElementById('yearInput');
+            const message = document.getElementById('message');
+            const lockContainer = document.querySelector('.lock-container');
+            const unlockBtn = document.getElementById('unlockBtn');
+            const heartsContainer = document.getElementById('hearts');
+            
+            // Crear corazones flotantes
+            for (let i = 0; i < 15; i++) {
+                createHeart(i);
+            }
+            
+            function createHeart(i) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '💛';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDelay = Math.random() * 10 + 's';
+                heartsContainer.appendChild(heart);
+            }
+            
+            unlockBtn.addEventListener('click', function() {
+                if (yearInput.value === '2024') {
+                    message.textContent = '¡Correcto! Nuestra amistad se desbloquea...';
+                    message.style.color = '#388e3c';
+                    lockContainer.classList.add('unlocked');
+                    
+                    // Efecto de confeti
+                    createConfetti();
+                    
+                    // Redirigir a la página de redirección después de 2 segundos
+                    setTimeout(function() {
+                        window.location.href = 'redireccionando.html';
+                    }, 2000);
+                } else {
+                    message.textContent = 'Año incorrecto. Intenta de nuevo.';
+                    message.style.color = '#e65100';
+                    
+                    // Efecto de vibración
+                    yearInput.style.animation = 'shake 0.5s';
+                    setTimeout(() => {
+                        yearInput.style.animation = '';
+                    }, 500);
+                }
+            });
+            
+            // Permitir enviar con Enter
+            yearInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    unlockBtn.click();
+                }
+            });
+            
+            // Efecto de confeti
+            function createConfetti() {
+                const colors = ['#ffd54f', '#ffc107', '#ffab00', '#ff8f00', '#ff6f00'];
+                
+                for (let i = 0; i < 150; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.top = '-10px';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    document.body.appendChild(confetti);
+                    
+                    // Animación
+                    const animationDuration = Math.random() * 3 + 2;
+                    confetti.style.animation = `
+                        fall ${animationDuration}s linear forwards,
+                        fade ${animationDuration}s linear forwards
+                    `;
+                    
+                    // Eliminar después de la animación
+                    setTimeout(() => {
+                        if (confetti.parentNode) {
+                            confetti.remove();
+                        }
+                    }, animationDuration * 1000);
+                }
+            }
+            
+            // Agregar keyframes para la vibración
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes shake {
+                    0%, 100% { transform: translateX(0); }
+                    10%, 30%, 50%, 70%, 90% { transform: translateX(-8px); }
+                    20%, 40%, 60%, 80% { transform: translateX(8px); }
+                }
+                
+                @keyframes fall {
+                    to { top: 100vh; }
+                }
+                
+                @keyframes fade {
+                    0% { opacity: 1; }
+                    80% { opacity: 1; }
+                    100% { opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Cambiar el tipo de input para que no se vea la contraseña
+            yearInput.addEventListener('input', function() {
+                if (this.value.length > 4) {
+                    this.value = this.value.slice(0, 4);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

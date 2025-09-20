@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros Momentos - 21 de Septiembre</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            min-height: 100vh;
+            background: linear-gradient(45deg, #fff8e1, #ffecb3, #ffd54f);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(255, 215, 0, 0.6);
+            border-radius: 50%;
+            opacity: 0;
+            animation: floatParticle 15s linear infinite;
+        }
+        
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .container {
+            max-width: 1300px;
+            width: 100%;
+            background: rgba(255, 253, 231, 0.97);
+            border-radius: 30px;
+            box-shadow: 0 25px 60px rgba(140, 110, 0, 0.4);
+            overflow: hidden;
+            border: 4px solid #ffd54f;
+            position: relative;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .container::before {
+            content: "";
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, #ffc107, #ff9800, #ffd54f, #ffc107, #ff9800);
+            border-radius: 33px;
+            z-index: -1;
+            animation: borderGlow 4s ease-in-out infinite alternate;
+            filter: blur(5px);
+        }
+        
+        @keyframes borderGlow {
+            0% { opacity: 0.6; }
+            100% { opacity: 0.9; }
+        }
+        
+        header {
+            text-align: center;
+            padding: 50px 40px;
+            background: linear-gradient(to right, #ffc107, #ff9800);
+            color: #5d4037;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid #ffd54f;
+        }
+        
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, transparent, #ffd54f, #fff8e1, #ffd54f, transparent);
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
+            letter-spacing: 2px;
+            font-weight: 800;
+            background: linear-gradient(45deg, #5d4037, #8d6e63);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(to right, #ffc107, #ff9800, #ffc107);
+            border-radius: 2px;
+        }
+        
+        .date {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            margin-top: 10px;
+            color: #5d4037;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+        }
+        
+        .back-btn {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background: rgba(255, 255, 255, 0.4);
+            border: 2px solid #5d4037;
+            color: #5d4037;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            z-index: 10;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .back-btn:hover {
+            background: #5d4037;
+            color: #ffd54f;
+            transform: scale(1.15) rotate(-5deg);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        }
+        
+        .gallery-container {
+            padding: 50px 30px;
+            text-align: center;
+        }
+        
+        .gallery-intro {
+            max-width: 850px;
+            margin: 0 auto 50px;
+            color: #8d6e63;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            position: relative;
+            padding: 0 20px;
+        }
+        
+        .gallery-intro::before, .gallery-intro::after {
+            content: """;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #ffc107;
+            display: block;
+            margin: 20px 0;
+            opacity: 0.7;
+        }
+        
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 30px;
+        }
+        
+        .photo-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            aspect-ratio: 4/3;
+            background: linear-gradient(145deg, #ffecb3, #ffd54f);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #5d4037;
+            font-weight: bold;
+            border: 3px solid #ffc107;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .photo-item:nth-child(even) {
+            background: linear-gradient(145deg, #ffd54f, #ffecb3);
+        }
+        
+        .photo-item:hover {
+            transform: translateY(-15px) scale(1.05) rotate(1deg);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+        }
+        
+        .photo-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(255, 215, 0, 0.2) 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: 2;
+        }
+        
+        .photo-item:hover::before {
+            opacity: 1;
+        }
+        
+        .photo-item::after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 15px;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        
+        .photo-item:hover::after {
+            opacity: 1;
+        }
+        
+        .photo-placeholder {
+            font-size: 3.5rem;
+            animation: pulse 3s infinite ease-in-out;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1) rotate(0deg); }
+            33% { transform: scale(1.1) rotate(2deg); }
+            66% { transform: scale(1.05) rotate(-2deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+        
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(93, 64, 55, 0.95), transparent);
+            color: #ffd54f;
+            padding: 25px 15px 15px;
+            transform: translateY(100%);
+            transition: transform 0.4s ease-out;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            z-index: 3;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+        
+        .photo-item:hover .photo-caption {
+            transform: translateY(0);
+        }
+        
+        .photo-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(93, 64, 55, 0.8);
+            color: #ffd54f;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1rem;
+            z-index: 3;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Modal para visualizar foto en grande */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.98);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .modal-content {
+            max-width: 85%;
+            max-height: 85%;
+            border-radius: 15px;
+            box-shadow: 0 0 60px rgba(255, 215, 0, 0.6);
+            border: 4px solid #ffd54f;
+            animation: modalAppear 0.5s ease-out;
+        }
+        
+        @keyframes modalAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.8) rotate(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            background: #ffd700;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #000;
+            font-weight: bold;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 2001;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .close-modal:hover {
+            transform: scale(1.15) rotate(90deg);
+            background: #5d4037;
+            color: #ffd54f;
+        }
+        
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 40px;
+            transform: translateY(-50%);
+            z-index: 2001;
+        }
+        
+        .nav-btn {
+            background: rgba(255, 215, 0, 0.9);
+            color: #5d4037;
+            border: none;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            font-size: 28px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-btn:hover {
+            background: #5d4037;
+            color: #ffd54f;
+            transform: scale(1.15);
+        }
+        
+        .modal-caption {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(93, 64, 55, 0.95);
+            color: #ffd54f;
+            padding: 20px 40px;
+            border-radius: 40px;
+            font-weight: 700;
+            text-align: center;
+            max-width: 85%;
+            font-size: 1.3rem;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+            z-index: 2001;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #8d6e63;
+            font-size: 1.2rem;
+            max-width: 1300px;
+            width: 100%;
+            background: rgba(255, 253, 231, 0.9);
+            border-radius: 20px;
+            border: 3px solid #ffd54f;
+            box-shadow: 0 10px 30px rgba(140, 110, 0, 0.25);
+        }
+        
+        .memory-quote {
+            font-family: 'Dancing Script', cursive;
+            margin-top: 15px;
+            color: #5d4037;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .photo-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 25px;
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 15px;
+                border-radius: 25px;
+            }
+            
+            header {
+                padding: 40px 25px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .back-btn {
+                top: 20px;
+                left: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            
+            .photo-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+                padding: 20px;
+            }
+            
+            .nav-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+            
+            .close-modal {
+                width: 50px;
+                height: 50px;
+                font-size: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .date {
+                font-size: 1.2rem;
+            }
+            
+            .photo-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .gallery-intro {
+                font-size: 1.1rem;
+                padding: 0 15px;
+            }
+            
+            .modal-nav {
+                padding: 0 20px;
+            }
+            
+            .nav-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            
+            .modal-caption {
+                font-size: 1.1rem;
+                padding: 15px 30px;
+            }
+            
+            .memory-quote {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-particles" id="particles"></div>
+    
+    <div class="container">
+        <header>
+            <a href="principal.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <div class="header-content">
+                <h1>Nuestros Momentos</h1>
+                <div class="date">21 de Septiembre</div>
+            </div>
+        </header>
+        
+        <div class="gallery-container">
+            <div class="gallery-intro">
+                <p>Estos son algunos de nuestros momentos que hemos compartido los dos fueron momentos bonitos y inolvidables. Haz clic en cualquier foto para verla en grande.</p>
+            </div>
+            
+            <div class="photo-grid">
+                <div class="photo-item" data-index="1">
+                    <div class="photo-number">1</div>
+                    <div class="photo-placeholder">📸</div>
+                    <div class="photo-caption">El día que te acompañe a tu casita después del voluntariado</div>
+                </div>
+                
+                <div class="photo-item" data-index="2">
+                    <div class="photo-number">2</div>
+                    <div class="photo-placeholder">📸</div>
+                    <div class="photo-caption">El día que fui a verte en tus prácticas</div>
+                </div>
+                
+                <div class="photo-item" data-index="3">
+                    <div class="photo-number">3</div>
+                    <div class="photo-placeholder">📸</div>
+                    <div class="photo-caption">Cuando estábamos en el TS</div>
+                </div>
+                
+                <div class="photo-item" data-index="4">
+                    <div class="photo-number">4</div>
+                    <div class="photo-placeholder">📸</div>
+                    <div class="photo-caption">Yo saliendo de prácticas y tu del voluntariado</div>
+                </div>
+                
+                <div class="photo-item" data-index="5">
+                    <div class="photo-number">5</div>
+                    <div class="photo-placeholder">📸</div>
+                    <div class="photo-caption">Llendonos a comer salchipollo</div>
+                </div>
+                
+                <div class="photo-item" data-index="6">
+                    <div class="photo-number">6</div>
+                    <div class="photo-placeholder">📸</div>
+                    <div class="photo-caption">Con mi hermanita hermosa juntos para siempre</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para visualizar foto en grande -->
+    <div class="modal" id="imageModal">
+        <span class="close-modal" id="closeModal">&times;</span>
+        <div class="modal-nav">
+            <button class="nav-btn" id="prevBtn">&#10094;</button>
+            <button class="nav-btn" id="nextBtn">&#10095;</button>
+        </div>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-caption" id="modalCaption"></div>
+    </div>
+    
+    <footer>
+        <p>Creado con 💛 para ti - 2025</p>
+        <p class="memory-quote">"Los momentos más simples se convierten en los recuerdos más valiosos"</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const photoItems = document.querySelectorAll('.photo-item');
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            const closeModal = document.getElementById('closeModal');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const particlesContainer = document.getElementById('particles');
+            
+            let currentIndex = 0;
+            const totalPhotos = photoItems.length;
+            
+            // Crear partículas flotantes
+            function createParticles() {
+                for (let i = 0; i < 30; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    
+                    const size = Math.random() * 15 + 5;
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    
+                    particle.style.left = `${Math.random() * 100}vw`;
+                    particle.style.animationDelay = `${Math.random() * 15}s`;
+                    particle.style.animationDuration = `${15 + Math.random() * 10}s`;
+                    
+                    particlesContainer.appendChild(particle);
+                }
+            }
+            
+            createParticles();
+            
+            // Función para abrir el modal con la foto correspondiente
+            function openModal(index) {
+                currentIndex = index;
+                const photoNumber = currentIndex + 1;
+                modalImg.src = `foto${photoNumber}.jpg`;
+                modalCaption.textContent = document.querySelector(`.photo-item[data-index="${photoNumber}"] .photo-caption`).textContent;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            // Event listeners para las fotos
+            photoItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    openModal(index);
+                });
+            });
+            
+            // Cerrar modal
+            closeModal.addEventListener('click', () => {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Cerrar modal al hacer clic fuera de la imagen
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Navegación entre fotos
+            prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                currentIndex = (currentIndex - 1 + totalPhotos) % totalPhotos;
+                const photoNumber = currentIndex + 1;
+                modalImg.src = `foto${photoNumber}.jpg`;
+                modalCaption.textContent = document.querySelector(`.photo-item[data-index="${photoNumber}"] .photo-caption`).textContent;
+            });
+            
+            nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                currentIndex = (currentIndex + 1) % totalPhotos;
+                const photoNumber = currentIndex + 1;
+                modalImg.src = `foto${photoNumber}.jpg`;
+                modalCaption.textContent = document.querySelector(`.photo-item[data-index="${photoNumber}"] .photo-caption`).textContent;
+            });
+            
+            // Navegación con teclado
+            document.addEventListener('keydown', (e) => {
+                if (modal.classList.contains('active')) {
+                    if (e.key === 'Escape') {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    } else if (e.key === 'ArrowLeft') {
+                        prevBtn.click();
+                    } else if (e.key === 'ArrowRight') {
+                        nextBtn.click();
+                    }
+                }
+            });
+            
+            // Precargar imágenes para una experiencia más fluida
+            function preloadImages() {
+                for (let i = 1; i <= totalPhotos; i++) {
+                    const img = new Image();
+                    img.src = `foto${i}.jpg`;
+                }
+            }
+            
+            preloadImages();
+        });
+    </script>
+</body>
+</html>
