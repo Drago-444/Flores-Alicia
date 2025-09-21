@@ -341,7 +341,7 @@
             margin: 0 auto;
             border: 1px solid rgba(255, 59, 48, 0.3);
             box-shadow: inset 0 0 15px rgba(255, 0, 0, 0.1);
-            scroll-behavior: smooth;
+            /* Eliminamos scroll-behavior para evitar desplazamiento automático */
             position: relative;
         }
         
@@ -847,33 +847,22 @@
                 });
             }
             
-            // Sincronizar letras con el audio
+            // Sincronizar letras con el audio (sin desplazamiento automático)
             function syncLyrics(currentTime) {
                 const lyrics = document.querySelectorAll('.lyric-line');
-                let activeLine = null;
-                
-                // Encontrar la línea actual basada en el tiempo
-                for (let i = lyrics.length - 1; i >= 0; i--) {
-                    if (currentTime >= parseFloat(lyrics[i].dataset.time)) {
-                        activeLine = lyrics[i];
-                        break;
-                    }
-                }
                 
                 // Remover clase active de todas las líneas
                 lyrics.forEach(line => {
                     line.classList.remove('active');
                 });
                 
-                // Agregar clase active a la línea actual
-                if (activeLine) {
-                    activeLine.classList.add('active');
-                    
-                    // Scroll suave a la línea activa
-                    activeLine.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'center'
-                    });
+                // Encontrar la línea actual basada en el tiempo
+                for (let i = lyrics.length - 1; i >= 0; i--) {
+                    if (currentTime >= parseFloat(lyrics[i].dataset.time)) {
+                        // Agregar clase active a la línea actual sin hacer scroll
+                        lyrics[i].classList.add('active');
+                        break;
+                    }
                 }
             }
             
