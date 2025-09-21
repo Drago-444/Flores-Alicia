@@ -443,6 +443,14 @@
                     message.style.color = '#ff7a70';
                     lockContainer.classList.add('unlocked');
                     
+                    // Ocultar el teclado en dispositivos móviles
+                    dateInput.blur();
+                    
+                    // Ocultar el input y el botón después de ingresar la fecha correcta
+                    dateInput.style.display = 'none';
+                    unlockBtn.style.display = 'none';
+                    document.querySelector('.hint').style.display = 'none';
+                    
                     // Efecto de confeti
                     createConfetti();
                     
@@ -466,6 +474,8 @@
             dateInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
                     unlockBtn.click();
+                    // Ocultar el teclado al presionar Enter
+                    dateInput.blur();
                 }
             });
             
@@ -476,6 +486,11 @@
                 // Limitar la longitud a 8 caracteres
                 if (e.target.value.length > 8) {
                     e.target.value = e.target.value.slice(0, 8);
+                }
+                
+                // Si se ingresan 8 dígitos, verificar automáticamente
+                if (e.target.value.length === 8) {
+                    unlockBtn.click();
                 }
             });
             
