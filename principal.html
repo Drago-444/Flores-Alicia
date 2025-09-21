@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestra Historia - 21 de Septiembre</title>
+    <title>Nuestra Historia - Para Alicia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -15,13 +15,14 @@
         
         body {
             min-height: 100vh;
-            background: linear-gradient(45deg, #fff8e1, #ffecb3, #ffd54f);
+            background: linear-gradient(45deg, #1a0000, #2a0000, #1a0000);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
+            color: #fff;
         }
         
         @keyframes gradientBG {
@@ -33,11 +34,11 @@
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: rgba(255, 253, 231, 0.95);
+            background: rgba(0, 0, 0, 0.85);
             border-radius: 25px;
-            box-shadow: 0 20px 50px rgba(140, 110, 0, 0.35);
+            box-shadow: 0 20px 50px rgba(200, 0, 0, 0.3);
             overflow: hidden;
-            border: 4px solid #ffd54f;
+            border: 4px solid #ff3b30;
             position: relative;
         }
         
@@ -48,7 +49,7 @@
             left: -2px;
             right: -2px;
             bottom: -2px;
-            background: linear-gradient(45deg, #ffc107, #ff9800, #ffd54f, #ffc107);
+            background: linear-gradient(45deg, #ff3b30, #ff5e54, #ff7a70, #ff3b30);
             border-radius: 28px;
             z-index: -1;
             animation: borderGlow 3s ease-in-out infinite alternate;
@@ -62,11 +63,11 @@
         header {
             text-align: center;
             padding: 40px 30px;
-            background: linear-gradient(to right, #ffc107, #ff9800);
-            color: #5d4037;
+            background: linear-gradient(to right, #ff3b30, #ff5e54);
+            color: #fff;
             position: relative;
             overflow: hidden;
-            border-bottom: 3px solid #ffd54f;
+            border-bottom: 3px solid #ff7a70;
         }
         
         header::after {
@@ -76,13 +77,13 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background: linear-gradient(to right, transparent, #ffd54f, transparent);
+            background: linear-gradient(to right, transparent, #ff7a70, transparent);
         }
         
         h1 {
             font-size: 2.8rem;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             letter-spacing: 1px;
         }
         
@@ -91,13 +92,14 @@
             opacity: 0.9;
             font-weight: 500;
             letter-spacing: 1px;
+            color: #fff;
         }
         
         .nav-tabs {
             display: flex;
             justify-content: center;
-            background: linear-gradient(to right, #ffd54f, #ffc107);
-            border-bottom: 3px solid #ff9800;
+            background: linear-gradient(to right, #ff3b30, #ff5e54);
+            border-bottom: 3px solid #ff7a70;
             position: relative;
         }
         
@@ -117,12 +119,12 @@
             border: none;
             font-size: 1.2rem;
             font-weight: 600;
-            color: #5d4037;
+            color: #fff;
             cursor: pointer;
             transition: all 0.4s;
             position: relative;
             overflow: hidden;
-            border-right: 1px solid rgba(255, 193, 7, 0.5);
+            border-right: 1px solid rgba(255, 122, 112, 0.5);
         }
         
         .tab-btn:last-child {
@@ -130,13 +132,13 @@
         }
         
         .tab-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.2);
         }
         
         .tab-btn.active {
-            background: #ff9800;
+            background: #ff5e54;
             color: white;
-            box-shadow: inset 0 0 15px rgba(230, 81, 0, 0.3);
+            box-shadow: inset 0 0 15px rgba(179, 0, 0, 0.3);
         }
         
         .tab-btn::before {
@@ -147,7 +149,7 @@
             transform: translateX(-50%);
             width: 0;
             height: 3px;
-            background: #5d4037;
+            background: #fff;
             transition: width 0.3s;
         }
         
@@ -158,7 +160,7 @@
         .content-section {
             padding: 40px;
             min-height: 600px;
-            background: rgba(255, 253, 240, 0.9);
+            background: rgba(0, 0, 0, 0.8);
         }
         
         .section {
@@ -187,7 +189,7 @@
         }
         
         .welcome-message h2 {
-            color: #5d4037;
+            color: #ff7a70;
             margin-bottom: 25px;
             font-size: 2.2rem;
             position: relative;
@@ -202,12 +204,12 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background: linear-gradient(to right, #ffc107, #ff9800, #ffc107);
+            background: linear-gradient(to right, #ff3b30, #ff7a70, #ff3b30);
             border-radius: 3px;
         }
         
         .welcome-message p {
-            color: #8d6e63;
+            color: #ff7a70;
             font-size: 1.2rem;
             line-height: 1.8;
             max-width: 700px;
@@ -227,14 +229,14 @@
             align-items: center;
             justify-content: center;
             padding: 15px 30px;
-            background: linear-gradient(to right, #ffc107, #ff9800);
-            color: #5d4037;
+            background: linear-gradient(to right, #ff3b30, #ff5e54);
+            color: #fff;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.4s;
-            box-shadow: 0 5px 15px rgba(140, 110, 0, 0.25);
-            border: 2px solid #ffd54f;
+            box-shadow: 0 5px 15px rgba(200, 0, 0, 0.3);
+            border: 2px solid #ff7a70;
             position: relative;
             overflow: hidden;
         }
@@ -256,7 +258,7 @@
         
         .btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(140, 110, 0, 0.4);
+            box-shadow: 0 8px 25px rgba(200, 0, 0, 0.4);
         }
         
         .btn i {
@@ -267,7 +269,7 @@
         .heart-divider {
             font-size: 2rem;
             margin: 20px 0;
-            color: #ff9800;
+            color: #ff3b30;
             animation: pulse 2s infinite;
         }
         
@@ -280,10 +282,48 @@
         footer {
             text-align: center;
             padding: 25px;
-            color: #8d6e63;
-            border-top: 2px solid #ffecb3;
-            background: rgba(255, 248, 225, 0.8);
+            color: #ff7a70;
+            border-top: 2px solid #ff3b30;
+            background: rgba(0, 0, 0, 0.9);
             font-size: 1.1rem;
+        }
+        
+        /* Efectos de corazones flotantes */
+        .floating-hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: #ff3b30;
+            opacity: 0;
+            animation: floatHeart 10s linear infinite;
+        }
+        
+        @keyframes floatHeart {
+            0% {
+                top: 100%;
+                opacity: 0;
+                transform: translateX(0) rotate(0deg);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                top: -10%;
+                opacity: 0;
+                transform: translateX(30px) rotate(360deg);
+            }
         }
         
         /* Responsive */
@@ -308,7 +348,7 @@
             .tab-btn {
                 padding: 15px;
                 border-right: none;
-                border-bottom: 1px solid rgba(255, 193, 7, 0.5);
+                border-bottom: 1px solid rgba(255, 122, 112, 0.5);
             }
             
             .tab-btn:last-child {
@@ -351,10 +391,12 @@
     </style>
 </head>
 <body>
+    <div class="floating-hearts" id="hearts"></div>
+    
     <div class="container">
         <header>
             <h1>Nuestra Historia</h1>
-            <div class="date">21 de Septiembre</div>
+            <div class="date">Para Alicia, mi amor</div>
         </header>
         
         <div class="nav-tabs">
@@ -369,15 +411,15 @@
             <div id="inicio" class="section active">
                 <div class="welcome-message">
                     <h2>Bienvenida a Nuestro Mundo</h2>
-                    <p>Este es un espacio creado especialmente para ti, donde encontrarás todos los recuerdos y momentos especiales que hemos compartido juntos.</p>
+                    <p>Este es un espacio creado especialmente para ti, Alicia, donde encontrarás todos los recuerdos y momentos especiales que hemos compartido juntos.</p>
                     
-                    <div class="heart-divider">💛</div>
+                    <div class="heart-divider">❤️</div>
                     
-                    <p>Explora cada sección para descubrir diferentes sorpresas que he preparado para ti.</p>
+                    <p>Explora cada sección para descubrir diferentes sorpresas que he preparado para ti, mi amor.</p>
                     
                     <div class="btn-container">
                         <a href="flores.html" class="btn">
-                            <i class="fas fa-fw fa-leaf"></i> Ver Flores Amarillas
+                            <i class="fas fa-fw fa-leaf"></i> Ver Flores
                         </a>
                         <a href="fotos.html" class="btn">
                             <i class="fas fa-fw fa-images"></i> Ver Nuestras Fotos
@@ -392,8 +434,8 @@
             <!-- SECCIÓN FLORES -->
             <div id="flores" class="section">
                 <div class="welcome-message">
-                    <h2>Flores Amarillas</h2>
-                    <p>Las flores amarillas simbolizan la felicidad y la amistad, pero para mí simbolizan nuestra bonita amistad y todos los momentos especiales que hemos vivido juntos.</p>
+                    <h2>Flores Para Ti</h2>
+                    <p>Las flores rojas simbolizan el amor y la pasión, pero para mí simbolizan nuestro amor y todos los momentos especiales que hemos vivido juntos.</p>
                     <a href="flores.html" class="btn">
                         <i class="fas fa-fw fa-leaf"></i> Ver Flores
                     </a>
@@ -414,8 +456,8 @@
             <!-- SECCIÓN CANCIÓN -->
             <div id="cancion" class="section">
                 <div class="welcome-message">
-                    <h2>Canción</h2>
-                    <p>Una canción que he preparado para ti que combina con las flores amarillas.</p>
+                    <h2>Canción Para Ti</h2>
+                    <p>Una canción que he preparado especialmente para ti, que representa lo que siento por ti.</p>
                     <a href="cancion.html" class="btn">
                         <i class="fas fa-fw fa-music"></i> Escuchar Canción
                     </a>
@@ -424,7 +466,7 @@
         </div>
         
         <footer>
-            <p>Creado con 💛 para ti - 2025</p>
+            <p>Creado con ❤️ para Alicia - 2025</p>
         </footer>
     </div>
 
@@ -443,6 +485,24 @@
                 const tabId = button.getAttribute('data-tab');
                 document.getElementById(tabId).classList.add('active');
             });
+        });
+
+        // Crear corazones flotantes
+        document.addEventListener('DOMContentLoaded', function() {
+            const heartsContainer = document.getElementById('hearts');
+            
+            for (let i = 0; i < 15; i++) {
+                createHeart(i);
+            }
+            
+            function createHeart(i) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDelay = Math.random() * 10 + 's';
+                heartsContainer.appendChild(heart);
+            }
         });
     </script>
 </body>

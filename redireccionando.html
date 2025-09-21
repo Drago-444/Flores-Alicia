@@ -18,11 +18,12 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: linear-gradient(45deg, #fff8e1, #ffecb3, #ffd54f);
+            background: linear-gradient(45deg, #1a0000, #2a0000, #1a0000);
             background-size: 400% 400%;
             animation: gradientBG 8s ease infinite;
             padding: 20px;
             overflow: hidden;
+            color: #fff;
         }
         
         @keyframes gradientBG {
@@ -33,24 +34,33 @@
         
         .container {
             text-align: center;
-            background: rgba(255, 253, 231, 0.95);
+            background: rgba(0, 0, 0, 0.85);
             padding: 50px 40px;
             border-radius: 25px;
-            box-shadow: 0 20px 40px rgba(140, 110, 0, 0.25),
-                        0 0 0 4px #ffd54f,
-                        0 0 0 8px rgba(140, 110, 0, 0.15);
+            box-shadow: 0 20px 40px rgba(200, 0, 0, 0.3),
+                        0 0 0 4px #ff3b30,
+                        0 0 0 8px rgba(100, 0, 0, 0.3);
             max-width: 500px;
             width: 100%;
             position: relative;
             z-index: 2;
+            border: 1px solid #ff3b30;
         }
         
         h1 {
-            color: #5d4037;
+            color: #ff7a70;
             margin-bottom: 30px;
             font-weight: 700;
             font-size: 32px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.3);
+        }
+        
+        .name {
+            color: #ff3b30;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 10px 0;
+            text-shadow: 0 0 10px rgba(255, 59, 48, 0.5);
         }
         
         .countdown-circle {
@@ -62,13 +72,13 @@
         
         .circle-bg {
             fill: none;
-            stroke: #ffecb3;
+            stroke: #ff7a70;
             stroke-width: 10;
         }
         
         .circle-progress {
             fill: none;
-            stroke: #ffc107;
+            stroke: #ff3b30;
             stroke-width: 10;
             stroke-linecap: round;
             transform: rotate(-90deg);
@@ -91,26 +101,26 @@
             transform: translate(-50%, -50%);
             font-size: 80px;
             font-weight: 700;
-            color: #5d4037;
+            color: #ff7a70;
         }
         
         .message {
             font-size: 24px;
-            color: #8d6e63;
+            color: #ff7a70;
             margin-bottom: 20px;
             font-weight: 600;
         }
         
         .submessage {
             font-size: 18px;
-            color: #8d6e63;
+            color: #ff7a70;
             margin-bottom: 30px;
         }
         
         .flower-loader {
             display: inline-block;
             font-size: 40px;
-            color: #ffc107;
+            color: #ff3b30;
             animation: pulse 1.5s infinite alternate;
         }
         
@@ -132,7 +142,7 @@
         .heart {
             position: absolute;
             font-size: 24px;
-            color: #ffab00;
+            color: #ff3b30;
             opacity: 0;
             animation: floatHeart 8s linear infinite;
         }
@@ -156,6 +166,25 @@
             }
         }
         
+        .moon {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 40px #fff, 
+                        0 0 80px #ff3b30,
+                        0 0 120px rgba(255, 59, 48, 0.5);
+            animation: pulseMoon 4s infinite alternate;
+        }
+        
+        @keyframes pulseMoon {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.1); opacity: 1; }
+        }
+        
         @media (max-width: 600px) {
             .container {
                 padding: 30px 20px;
@@ -163,6 +192,10 @@
             
             h1 {
                 font-size: 28px;
+            }
+            
+            .name {
+                font-size: 24px;
             }
             
             .countdown-circle {
@@ -181,14 +214,23 @@
             .submessage {
                 font-size: 16px;
             }
+            
+            .moon {
+                top: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="floating-hearts" id="hearts"></div>
+    <div class="moon"></div>
     
     <div class="container">
         <h1><i class="fas fa-lock-open"></i> ¡Código Correcto!</h1>
+        <div class="name">Para Alicia</div>
         
         <div class="countdown-circle">
             <svg viewBox="0 0 200 200">
@@ -201,7 +243,7 @@
         <div class="message">Redirigiendo a tu sorpresa</div>
         <div class="submessage">Prepárate para un momento especial</div>
         
-        <div class="flower-loader">🌼</div>
+        <div class="flower-loader">❤️</div>
     </div>
 
     <script>
@@ -218,7 +260,7 @@
             function createHeart(i) {
                 const heart = document.createElement('div');
                 heart.className = 'heart';
-                heart.innerHTML = '💛';
+                heart.innerHTML = '❤️';
                 heart.style.left = Math.random() * 100 + 'vw';
                 heart.style.animationDelay = Math.random() * 8 + 's';
                 heartsContainer.appendChild(heart);

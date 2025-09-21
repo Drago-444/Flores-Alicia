@@ -5,27 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canción - Flores Amarillas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #fff9e6, #ffedb8, #ffdf8a);
-            background-size: 300% 300%;
-            animation: gradientBG 18s ease infinite;
-            padding: 20px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-            position: relative;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #1a0000, #2a0000, #1a0000);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+            padding: 20px;
             overflow-x: hidden;
+            color: #fff;
+            flex-direction: column;
         }
         
         @keyframes gradientBG {
@@ -34,7 +34,7 @@
             100% { background-position: 0% 50%; }
         }
         
-        .floating-notes {
+        .floating-hearts {
             position: fixed;
             top: 0;
             left: 0;
@@ -44,170 +44,108 @@
             z-index: -1;
         }
         
-        .music-note {
+        .heart {
             position: absolute;
-            color: rgba(255, 183, 77, 0.6);
-            font-size: 24px;
+            font-size: 20px;
+            color: #ff3b30;
             opacity: 0;
-            animation: floatNote 20s linear infinite;
+            animation: floatHeart 10s linear infinite;
         }
         
-        @keyframes floatNote {
+        @keyframes floatHeart {
             0% {
-                transform: translateY(100vh) rotate(0deg) scale(0.8);
+                top: 100%;
                 opacity: 0;
+                transform: translateX(0) rotate(0deg);
             }
             10% {
+                opacity: 1;
+            }
+            90% {
                 opacity: 0.8;
             }
-            90% {
-                opacity: 0.4;
-            }
             100% {
-                transform: translateY(-100px) rotate(360deg) scale(1.2);
+                top: -10%;
                 opacity: 0;
+                transform: translateX(30px) rotate(360deg);
             }
         }
         
-        .floating-flower {
+        .moon {
             position: absolute;
-            font-size: 18px;
-            opacity: 0.3;
-            color: #ffb74d;
-            animation: floatFlower 25s linear infinite;
-            z-index: -1;
+            top: 40px;
+            right: 40px;
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 40px #fff, 
+                        0 0 80px #ff3b30,
+                        0 0 120px rgba(255, 59, 48, 0.5);
+            animation: pulseMoon 4s infinite alternate;
         }
         
-        @keyframes floatFlower {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.5;
-            }
-            90% {
-                opacity: 0.3;
-            }
-            100% {
-                transform: translateY(-100px) rotate(360deg);
-                opacity: 0;
-            }
+        @keyframes pulseMoon {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.1); opacity: 1; }
         }
         
         .container {
-            max-width: 1000px;
             width: 100%;
-            background: rgba(255, 253, 240, 0.92);
-            border-radius: 24px;
-            box-shadow: 0 20px 50px rgba(255, 167, 38, 0.25), 
-                        0 5px 15px rgba(0, 0, 0, 0.07),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.5);
-            overflow: hidden;
-            border: 1px solid rgba(255, 213, 79, 0.4);
-            position: relative;
-            margin-bottom: 40px;
-            backdrop-filter: blur(12px);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-        
-        .container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 60px rgba(255, 167, 38, 0.3), 
-                        0 8px 20px rgba(0, 0, 0, 0.1),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.5);
-        }
-        
-        .container::before {
-            content: "";
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, #ffb300, #ff8f00, #ffd54f, #ffb300, #ff8f00);
-            border-radius: 26px;
-            z-index: -1;
-            animation: borderGlow 5s ease-in-out infinite alternate;
-            filter: blur(8px);
-            opacity: 0.7;
-        }
-        
-        @keyframes borderGlow {
-            0% { opacity: 0.5; }
-            100% { opacity: 0.8; }
-        }
-        
-        header {
+            max-width: 800px;
             text-align: center;
-            padding: 40px 30px 30px;
-            background: linear-gradient(to right, #ffb300, #ff8f00);
-            color: #5d4037;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 40px 30px;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(200, 0, 0, 0.3),
+                        0 0 0 4px #ff3b30,
+                        0 0 0 8px rgba(100, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
             position: relative;
-            overflow: hidden;
-            border-bottom: 1px solid rgba(255, 213, 79, 0.5);
+            z-index: 2;
+            margin: 0 auto 40px;
+            border: 1px solid #ff3b30;
         }
         
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 0.1;
+        .header {
+            margin-bottom: 30px;
+            position: relative;
         }
         
-        header::after {
+        .header::after {
             content: "";
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
             height: 3px;
-            background: linear-gradient(to right, transparent, #ffd54f, #fff8e1, #ffd54f, transparent);
+            background: linear-gradient(to right, #ff3b30, #ff7a70, #ff3b30);
+            border-radius: 3px;
         }
         
         h1 {
-            font-size: 2.8rem;
+            color: #ff7a70;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
-            letter-spacing: 1px;
             font-weight: 700;
-            background: linear-gradient(45deg, #5d4037, #8d6e63, #5d4037);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: relative;
-            display: inline-block;
-        }
-        
-        h1::after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(to right, transparent, #ffd54f, transparent);
+            font-size: 32px;
+            text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.3);
         }
         
         .song-info {
-            font-size: 1.2rem;
-            opacity: 0.9;
+            color: #ff7a70;
+            font-size: 18px;
             font-weight: 500;
-            margin-top: 5px;
-            color: #5d4037;
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+            letter-spacing: 1px;
         }
         
         .back-btn {
             position: absolute;
-            top: 25px;
-            left: 25px;
-            background: rgba(255, 255, 255, 0.5);
-            border: 2px solid rgba(93, 64, 55, 0.7);
-            color: #5d4037;
+            top: 0;
+            left: 0;
+            background: rgba(255, 59, 48, 0.3);
+            border: 2px solid #ff3b30;
+            color: #fff;
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -219,20 +157,18 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-decoration: none;
             z-index: 10;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(5px);
+            box-shadow: 0 5px 15px rgba(179, 0, 0, 0.3);
         }
         
         .back-btn:hover {
-            background: #5d4037;
-            color: #ffd54f;
+            background: #ff3b30;
+            color: #fff;
             transform: scale(1.1) rotate(-5deg);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 25px rgba(179, 0, 0, 0.5);
         }
         
         .player-container {
-            padding: 40px 30px;
-            text-align: center;
+            padding: 20px 0;
         }
         
         .audio-player {
@@ -241,12 +177,12 @@
             margin: 0 auto 30px;
             border-radius: 50px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(179, 0, 0, 0.3);
             transition: box-shadow 0.3s ease;
         }
         
         .audio-player:hover {
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 12px 35px rgba(179, 0, 0, 0.4);
         }
         
         .controls {
@@ -262,41 +198,47 @@
             height: 60px;
             border-radius: 50%;
             border: none;
-            background: linear-gradient(145deg, #ffb300, #ff8f00);
+            background: linear-gradient(to right, #ff3b30, #ff5e54);
             color: white;
             font-size: 20px;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 5px 15px rgba(255, 145, 0, 0.3),
-                        inset 0 2px 0 rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 0 #b30000, 
+                        0 15px 25px rgba(179, 0, 0, 0.35);
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
+            border: 2px solid #330000;
         }
         
         .control-btn::before {
             content: "";
             position: absolute;
             top: 0;
-            left: 0;
+            left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
-            border-radius: 50%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: all 0.4s;
+            z-index: 1;
+        }
+        
+        .control-btn:hover::before {
+            left: 100%;
         }
         
         .control-btn:hover {
-            transform: scale(1.1) translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 145, 0, 0.4),
-                        inset 0 2px 0 rgba(255, 255, 255, 0.3);
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 12px 0 #b30000, 
+                        0 20px 30px rgba(179, 0, 0, 0.4);
         }
         
         .control-btn:active {
-            transform: scale(0.95);
-            box-shadow: 0 3px 10px rgba(255, 145, 0, 0.3),
-                        inset 0 2px 0 rgba(255, 255, 255, 0.3);
+            transform: translateY(2px);
+            box-shadow: 0 5px 0 #b30000, 
+                        0 10px 20px rgba(179, 0, 0, 0.3);
         }
         
         .control-btn-large {
@@ -309,19 +251,19 @@
             width: 100%;
             max-width: 600px;
             height: 10px;
-            background: rgba(255, 193, 7, 0.2);
+            background: rgba(255, 59, 48, 0.2);
             border-radius: 10px;
             margin: 25px auto 15px;
             overflow: hidden;
             cursor: pointer;
             position: relative;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
         }
         
         .progress-bar {
             height: 100%;
             width: 0%;
-            background: linear-gradient(to right, #ffb300, #ff8f00);
+            background: linear-gradient(to right, #ff3b30, #ff5e54);
             border-radius: 10px;
             transition: width 0.1s;
             position: relative;
@@ -350,186 +292,9 @@
             width: 100%;
             max-width: 600px;
             margin: 10px auto 25px;
-            color: #5d4037;
+            color: #ff7a70;
             font-weight: 500;
             font-size: 1.1rem;
-            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
-        }
-        
-        .lyrics-container {
-            background: rgba(255, 251, 235, 0.7);
-            border-radius: 20px;
-            padding: 30px;
-            max-height: 400px;
-            overflow-y: auto;
-            margin: 0 auto;
-            border: 1px solid rgba(255, 213, 79, 0.3);
-            box-shadow: inset 0 0 15px rgba(255, 193, 7, 0.1);
-            scroll-behavior: smooth;
-            position: relative;
-        }
-        
-        .lyrics-container::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 20px;
-            background: linear-gradient(to bottom, rgba(255, 251, 235, 1), transparent);
-            pointer-events: none;
-            z-index: 2;
-            border-radius: 20px 20px 0 0;
-        }
-        
-        .lyrics-container::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 20px;
-            background: linear-gradient(to top, rgba(255, 251, 235, 1), transparent);
-            pointer-events: none;
-            z-index: 2;
-            border-radius: 0 0 20px 20px;
-        }
-        
-        .lyrics-container::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        .lyrics-container::-webkit-scrollbar-track {
-            background: rgba(255, 193, 7, 0.1);
-            border-radius: 10px;
-        }
-        
-        .lyrics-container::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, #ffb300, #ff8f00);
-            border-radius: 10px;
-        }
-        
-        .lyric-line {
-            padding: 15px 20px;
-            margin: 10px 0;
-            border-radius: 15px;
-            font-size: 1.2rem;
-            color: #5d4037;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-align: center;
-            position: relative;
-            background: rgba(255, 255, 255, 0.5);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-        
-        /* Estilos para diferentes tipos de letras */
-        .lyric-line.intro {
-            font-style: italic;
-            opacity: 0.8;
-            font-size: 1.4rem;
-            background: rgba(255, 243, 205, 0.5);
-        }
-        
-        .lyric-line.verse {
-            color: #5d4037;
-            font-weight: 500;
-        }
-        
-        .lyric-line.chorus {
-            color: #e65100;
-            font-weight: 700;
-            font-size: 1.3rem;
-            background: rgba(255, 236, 179, 0.4);
-            border: 1px solid rgba(255, 193, 7, 0.3);
-        }
-        
-        .lyric-line.bridge {
-            color: #8d6e63;
-            font-style: italic;
-            background: rgba(245, 245, 245, 0.5);
-        }
-        
-        .lyric-line.title {
-            color: #ff8f00;
-            font-weight: 800;
-            font-size: 1.5rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-            background: rgba(255, 236, 179, 0.5);
-        }
-        
-        .lyric-line.outro {
-            color: #5d4037;
-            font-weight: 600;
-            background: rgba(255, 243, 205, 0.5);
-        }
-        
-        .lyric-line.final {
-            color: #ff8f00;
-            font-weight: 800;
-            font-size: 1.4rem;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-            background: rgba(255, 236, 179, 0.5);
-        }
-        
-        .lyric-line.highlight {
-            background: linear-gradient(to right, rgba(255, 193, 7, 0.15), rgba(255, 152, 0, 0.15));
-            border-left: 3px solid #ffb300;
-        }
-        
-        /* Mejora para la línea activa */
-        .lyric-line.active {
-            background: linear-gradient(to right, rgba(255, 193, 7, 0.25), rgba(255, 152, 0, 0.25)) !important;
-            color: #5d4037 !important;
-            transform: scale(1.03);
-            box-shadow: 0 5px 15px rgba(255, 145, 0, 0.2);
-            font-weight: 700;
-            border-left: 4px solid #ffb300;
-            padding-left: 30px;
-        }
-        
-        .lyric-line.active::before {
-            content: "♪";
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.5rem;
-            color: #ff8f00;
-            animation: pulse 1s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { opacity: 0.7; }
-            50% { opacity: 1; }
-            100% { opacity: 0.7; }
-        }
-        
-        footer {
-            text-align: center;
-            padding: 25px;
-            color: #8d6e63;
-            font-size: 1.1rem;
-            max-width: 1000px;
-            width: 100%;
-            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
-        }
-        
-        .dedication {
-            font-family: 'Dancing Script', cursive;
-            margin-top: 15px;
-            color: #5d4037;
-            font-size: 1.8rem;
-            font-weight: 600;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .dedication::before, .dedication::after {
-            content: '"';
-            font-size: 2rem;
-            color: #ffb300;
-            position: relative;
-            top: 5px;
         }
         
         .volume-control {
@@ -544,10 +309,10 @@
             width: 100px;
             -webkit-appearance: none;
             height: 6px;
-            background: rgba(255, 193, 7, 0.2);
+            background: rgba(255, 59, 48, 0.2);
             border-radius: 3px;
             outline: none;
-            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
         }
         
         .volume-slider::-webkit-slider-thumb {
@@ -555,31 +320,205 @@
             width: 16px;
             height: 16px;
             border-radius: 50%;
-            background: #ff8f00;
+            background: #ff3b30;
             cursor: pointer;
             transition: all 0.2s;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
         
         .volume-slider::-webkit-slider-thumb:hover {
-            background: #ff6f00;
+            background: #ff7a70;
             transform: scale(1.2);
-            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.4);
+        }
+        
+        .lyrics-container {
+            background: rgba(30, 0, 0, 0.7);
+            border-radius: 20px;
+            padding: 30px;
+            max-height: 400px;
+            overflow-y: auto;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 59, 48, 0.3);
+            box-shadow: inset 0 0 15px rgba(255, 0, 0, 0.1);
+            scroll-behavior: smooth;
+            position: relative;
+        }
+        
+        .lyrics-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: linear-gradient(to bottom, rgba(30, 0, 0, 1), transparent);
+            pointer-events: none;
+            z-index: 2;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .lyrics-container::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: linear-gradient(to top, rgba(30, 0, 0, 1), transparent);
+            pointer-events: none;
+            z-index: 2;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .lyrics-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .lyrics-container::-webkit-scrollbar-track {
+            background: rgba(255, 59, 48, 0.1);
+            border-radius: 10px;
+        }
+        
+        .lyrics-container::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #ff3b30, #ff5e54);
+            border-radius: 10px;
+        }
+        
+        .lyric-line {
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            color: #ff7a70;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-align: center;
+            position: relative;
+            background: rgba(50, 0, 0, 0.5);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .lyric-line.intro {
+            font-style: italic;
+            opacity: 0.8;
+            font-size: 1.4rem;
+            background: rgba(80, 0, 0, 0.5);
+        }
+        
+        .lyric-line.verse {
+            color: #ff7a70;
+            font-weight: 500;
+        }
+        
+        .lyric-line.chorus {
+            color: #ff3b30;
+            font-weight: 700;
+            font-size: 1.3rem;
+            background: rgba(80, 0, 0, 0.4);
+            border: 1px solid rgba(255, 59, 48, 0.3);
+        }
+        
+        .lyric-line.bridge {
+            color: #ff9d97;
+            font-style: italic;
+            background: rgba(50, 0, 0, 0.5);
+        }
+        
+        .lyric-line.title {
+            color: #ff3b30;
+            font-weight: 800;
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            background: rgba(80, 0, 0, 0.5);
+        }
+        
+        .lyric-line.outro {
+            color: #ff7a70;
+            font-weight: 600;
+            background: rgba(80, 0, 0, 0.5);
+        }
+        
+        .lyric-line.final {
+            color: #ff3b30;
+            font-weight: 800;
+            font-size: 1.4rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            background: rgba(80, 0, 0, 0.5);
+        }
+        
+        .lyric-line.highlight {
+            background: linear-gradient(to right, rgba(255, 59, 48, 0.15), rgba(179, 0, 0, 0.15));
+            border-left: 3px solid #ff3b30;
+        }
+        
+        .lyric-line.active {
+            background: linear-gradient(to right, rgba(255, 59, 48, 0.25), rgba(179, 0, 0, 0.25)) !important;
+            color: #fff !important;
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+            font-weight: 700;
+            border-left: 4px solid #ff3b30;
+            padding-left: 30px;
+        }
+        
+        .lyric-line.active::before {
+            content: "♪";
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: #ff3b30;
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #ff7a70;
+            font-size: 1.1rem;
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        .dedication {
+            font-family: 'Dancing Script', cursive;
+            margin-top: 15px;
+            color: #ff3b30;
+            font-size: 1.8rem;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dedication::before, .dedication::after {
+            content: '"';
+            font-size: 2rem;
+            color: #ff3b30;
+            position: relative;
+            top: 5px;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
             .container {
+                padding: 30px 20px;
                 margin: 15px;
                 border-radius: 20px;
             }
             
-            header {
-                padding: 30px 20px 25px;
+            h1 {
+                font-size: 26px;
             }
             
-            h1 {
-                font-size: 2.2rem;
+            .song-info {
+                font-size: 16px;
             }
             
             .controls {
@@ -623,15 +562,22 @@
             .lyric-line.final {
                 font-size: 1.2rem;
             }
+            
+            .moon {
+                top: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+            }
         }
         
         @media (max-width: 480px) {
             h1 {
-                font-size: 1.8rem;
+                font-size: 22px;
             }
             
             .song-info {
-                font-size: 1rem;
+                font-size: 14px;
             }
             
             .control-btn {
@@ -673,17 +619,17 @@
     </style>
 </head>
 <body>
-    <div class="floating-notes" id="notes"></div>
-    <div class="floating-flowers" id="flowers"></div>
+    <div class="floating-hearts" id="hearts"></div>
+    <div class="moon"></div>
     
     <div class="container">
-        <header>
+        <div class="header">
             <a href="principal.html" class="back-btn">
                 <i class="fas fa-arrow-left"></i>
             </a>
             <h1>Flores Amarillas</h1>
             <div class="song-info">Floricienta y su banda · 2005</div>
-        </header>
+        </div>
         
         <div class="player-container">
             <div class="controls">
@@ -714,9 +660,9 @@
             </div>
             
             <div class="volume-control">
-                <i class="fas fa-volume-up" style="color: #5d4037;"></i>
+                <i class="fas fa-volume-up" style="color: #ff7a70;"></i>
                 <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.1" value="0.7">
-                <i class="fas fa-volume-down" style="color: #5d4037;"></i>
+                <i class="fas fa-volume-down" style="color: #ff7a70;"></i>
             </div>
             
             <div class="lyrics-container" id="lyricsContainer">
@@ -726,7 +672,7 @@
     </div>
     
     <footer>
-        <p>Para ti, con todo mi cariño💛</p>
+        <p>Para ti, con todo mi cariño❤️</p>
         <p class="dedication">Porque cada momento contigo es especial</p>
     </footer>
 
@@ -736,8 +682,40 @@
         Tu navegador no soporta el elemento de audio.
     </audio>
 
-    <script src="cancion.js"></script>
     <script>
+        // Datos de la letra de la canción con tiempos en segundos
+        const lyricsData = [
+            { time: 0.0, text: "..." },
+            { time: 17.0, text: "Él la estaba esperando con una flor amarilla" },
+            { time: 25.5, text: "Ella lo estaba soñando con la luz en su pupila" },
+            { time: 32.0, text: "Y el amarillo del sol iluminaba la esquina (la esquina)" },
+            { time: 41.0, text: "Lo sentía tan cercano, lo sentía desde niña" },
+            { time: 46.0, text: "Ella sabía que él sabía, que algún día pasaría" },
+            { time: 52.0, text: "Que vendría a buscarla, con sus flores amarillas" },
+            { time: 60.0, text: "No te apures no detengas, el instante del encuentro" },
+            { time: 64.0, text: "Está dicho que es un hecho, no la pierdas no hay derecho" },
+            { time: 67.0, text: "No te olvides, que la vida casi nunca está dormida" },
+            { time: 94.0, text: "En ese bar tan desierto los esperaba el encuentro (el encuentro)" },
+            { time: 102.0, text: "Ella llegó en limosina amarilla por supuesto" },
+            { time: 110.0, text: "Él se acercó de repente y la miró tan de frente (de frente)" },
+            { time: 118.0, text: "Toda una vida soñada y no pudo decir nada" },
+            { time: 124.0, text: "Ella sabía que él sabía, que algún día pasaría" },
+            { time: 129.0, text: "Que vendría a buscarla, con sus flores amarillas" },
+            { time: 137.0, text: "No te apures no detengas, el instante del encuentro" },
+            { time: 141.0, text: "Está dicho que es un hecho, no la pierdas no hay derecho" },
+            { time: 145.0, text: "No te olvides, que la vida casi nunca está dormida" },
+            { time: 161.0, text: "Flores amarillas" },
+            { time: 169.0, text: "Ella sabía que él sabía, que algún día pasaría" },
+            { time: 174.0, text: "Que vendría a buscarla, con sus flores amarillas" },
+            { time: 182.0, text: "No te apures no detengas, el instante del encuentro" },
+            { time: 186.0, text: "Está dicho que es un hecho, no la pierdas no hay derecho" },
+            { time: 190.0, text: "No te olvides, que la vida casi nunca está dormida" },
+            { time: 198.0, text: "Ella sabía que él sabía" },
+            { time: 202.0, text: "Él sabía, ella sabia" },
+            { time: 204.0, text: "Él sabía, ella sabía" },
+            { time: 206.0, text: "Y se olvidaron,de sus flores amarillas" },
+        ];
+
         document.addEventListener('DOMContentLoaded', function() {
             const audio = document.getElementById('audioPlayer');
             const playBtn = document.getElementById('playBtn');
@@ -750,47 +728,23 @@
             const currentTimeEl = document.getElementById('currentTime');
             const durationEl = document.getElementById('duration');
             const lyricsContainer = document.getElementById('lyricsContainer');
-            const notesContainer = document.getElementById('notes');
-            const flowersContainer = document.getElementById('flowers');
+            const heartsContainer = document.getElementById('hearts');
             const volumeSlider = document.getElementById('volumeSlider');
             
             // Establecer volumen inicial
             audio.volume = 0.7;
             
-            // Crear notas musicales flotantes
-            function createNotes() {
-                const notes = ['♩', '♪', '♫', '♬', '🎵', '🎶'];
-                for (let i = 0; i < 20; i++) {
-                    const note = document.createElement('div');
-                    note.classList.add('music-note');
-                    note.textContent = notes[Math.floor(Math.random() * notes.length)];
-                    
-                    note.style.left = `${Math.random() * 100}vw`;
-                    note.style.animationDelay = `${Math.random() * 15}s`;
-                    note.style.animationDuration = `${15 + Math.random() * 10}s`;
-                    
-                    notesContainer.appendChild(note);
-                }
-            }
-            
-            // Crear flores flotantes
-            function createFlowers() {
-                const flowers = ['🌼', '🌻', '💮', '🌸', '🌺', '🌷'];
+            // Crear corazones flotantes
+            function createHearts() {
                 for (let i = 0; i < 15; i++) {
-                    const flower = document.createElement('div');
-                    flower.classList.add('floating-flower');
-                    flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
-                    
-                    flower.style.left = `${Math.random() * 100}vw`;
-                    flower.style.animationDelay = `${Math.random() * 20}s`;
-                    flower.style.animationDuration = `${20 + Math.random() * 15}s`;
-                    
-                    flowersContainer.appendChild(flower);
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = '❤️';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.animationDelay = Math.random() * 10 + 's';
+                    heartsContainer.appendChild(heart);
                 }
             }
-            
-            createNotes();
-            createFlowers();
             
             // Formatear tiempo en minutos:segundos
             function formatTime(seconds) {
@@ -871,7 +825,7 @@
             progressContainer.addEventListener('click', setProgress);
             volumeSlider.addEventListener('input', setVolume);
             
-            // Cargar letras desde cancion.js con estilos mejorados
+            // Cargar letras desde lyricsData
             function loadLyrics() {
                 lyricsData.forEach(line => {
                     const lyricLine = document.createElement('div');
@@ -927,6 +881,7 @@
             pauseBtn.style.display = 'none';
             
             // Inicializar
+            createHearts();
             loadLyrics();
         });
     </script>

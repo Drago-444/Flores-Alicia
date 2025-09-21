@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestros Momentos - 21 de Septiembre</title>
+    <title>Nuestros Momentos - Para Alicia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
     <style>
@@ -16,7 +16,7 @@
         
         body {
             min-height: 100vh;
-            background: linear-gradient(45deg, #fff8e1, #ffecb3, #ffd54f);
+            background: linear-gradient(45deg, #1a0000, #2a0000, #1a0000);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             padding: 20px;
@@ -24,6 +24,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            color: #fff;
         }
         
         @keyframes gradientBG {
@@ -44,7 +45,7 @@
         
         .particle {
             position: absolute;
-            background: rgba(255, 215, 0, 0.6);
+            background: rgba(255, 59, 48, 0.6);
             border-radius: 50%;
             opacity: 0;
             animation: floatParticle 15s linear infinite;
@@ -70,11 +71,11 @@
         .container {
             max-width: 1300px;
             width: 100%;
-            background: rgba(255, 253, 231, 0.97);
+            background: rgba(0, 0, 0, 0.9);
             border-radius: 30px;
-            box-shadow: 0 25px 60px rgba(140, 110, 0, 0.4);
+            box-shadow: 0 25px 60px rgba(200, 0, 0, 0.3);
             overflow: hidden;
-            border: 4px solid #ffd54f;
+            border: 4px solid #ff3b30;
             position: relative;
             margin-bottom: 40px;
             backdrop-filter: blur(10px);
@@ -87,7 +88,7 @@
             left: -3px;
             right: -3px;
             bottom: -3px;
-            background: linear-gradient(45deg, #ffc107, #ff9800, #ffd54f, #ffc107, #ff9800);
+            background: linear-gradient(45deg, #ff3b30, #ff5e54, #ff7a70, #ff3b30, #ff5e54);
             border-radius: 33px;
             z-index: -1;
             animation: borderGlow 4s ease-in-out infinite alternate;
@@ -102,11 +103,11 @@
         header {
             text-align: center;
             padding: 50px 40px;
-            background: linear-gradient(to right, #ffc107, #ff9800);
-            color: #5d4037;
+            background: linear-gradient(to right, #ff3b30, #ff5e54);
+            color: #fff;
             position: relative;
             overflow: hidden;
-            border-bottom: 4px solid #ffd54f;
+            border-bottom: 4px solid #ff7a70;
         }
         
         header::after {
@@ -116,7 +117,7 @@
             left: 0;
             width: 100%;
             height: 5px;
-            background: linear-gradient(to right, transparent, #ffd54f, #fff8e1, #ffd54f, transparent);
+            background: linear-gradient(to right, transparent, #ff7a70, #fff, #ff7a70, transparent);
         }
         
         .header-content {
@@ -127,10 +128,10 @@
         h1 {
             font-size: 3.5rem;
             margin-bottom: 15px;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
             letter-spacing: 2px;
             font-weight: 800;
-            background: linear-gradient(45deg, #5d4037, #8d6e63);
+            background: linear-gradient(45deg, #ff7a70, #ff9d97, #ff7a70);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
@@ -145,7 +146,7 @@
             transform: translateX(-50%);
             width: 120px;
             height: 4px;
-            background: linear-gradient(to right, #ffc107, #ff9800, #ffc107);
+            background: linear-gradient(to right, #ff3b30, #ff7a70, #ff3b30);
             border-radius: 2px;
         }
         
@@ -155,17 +156,17 @@
             font-weight: 600;
             letter-spacing: 1.5px;
             margin-top: 10px;
-            color: #5d4037;
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
         
         .back-btn {
             position: absolute;
             top: 30px;
             left: 30px;
-            background: rgba(255, 255, 255, 0.4);
-            border: 2px solid #5d4037;
-            color: #5d4037;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid #fff;
+            color: #fff;
             width: 60px;
             height: 60px;
             border-radius: 50%;
@@ -177,14 +178,14 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-decoration: none;
             z-index: 10;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
         .back-btn:hover {
-            background: #5d4037;
-            color: #ffd54f;
+            background: #fff;
+            color: #ff3b30;
             transform: scale(1.15) rotate(-5deg);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
         
         .gallery-container {
@@ -195,7 +196,7 @@
         .gallery-intro {
             max-width: 850px;
             margin: 0 auto 50px;
-            color: #8d6e63;
+            color: #ff7a70;
             font-size: 1.3rem;
             line-height: 1.8;
             position: relative;
@@ -206,7 +207,7 @@
             content: """;
             font-family: 'Dancing Script', cursive;
             font-size: 2.5rem;
-            color: #ffc107;
+            color: #ff3b30;
             display: block;
             margin: 20px 0;
             opacity: 0.7;
@@ -223,28 +224,28 @@
             position: relative;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 35px rgba(200, 0, 0, 0.2);
             cursor: pointer;
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             aspect-ratio: 4/3;
-            background: linear-gradient(145deg, #ffecb3, #ffd54f);
+            background: linear-gradient(145deg, #ff5e54, #ff3b30);
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #5d4037;
+            color: #fff;
             font-weight: bold;
-            border: 3px solid #ffc107;
+            border: 3px solid #ff7a70;
             transform-style: preserve-3d;
             perspective: 1000px;
         }
         
         .photo-item:nth-child(even) {
-            background: linear-gradient(145deg, #ffd54f, #ffecb3);
+            background: linear-gradient(145deg, #ff3b30, #ff5e54);
         }
         
         .photo-item:hover {
             transform: translateY(-15px) scale(1.05) rotate(1deg);
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 20px 45px rgba(200, 0, 0, 0.4);
         }
         
         .photo-item::before {
@@ -254,7 +255,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, transparent 0%, rgba(255, 215, 0, 0.2) 100%);
+            background: linear-gradient(135deg, transparent 0%, rgba(255, 59, 48, 0.2) 100%);
             opacity: 0;
             transition: opacity 0.4s;
             z-index: 2;
@@ -284,7 +285,7 @@
         .photo-placeholder {
             font-size: 3.5rem;
             animation: pulse 3s infinite ease-in-out;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
         }
         
         @keyframes pulse {
@@ -299,8 +300,8 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(93, 64, 55, 0.95), transparent);
-            color: #ffd54f;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+            color: #ff7a70;
             padding: 25px 15px 15px;
             transform: translateY(100%);
             transition: transform 0.4s ease-out;
@@ -308,7 +309,7 @@
             font-weight: 700;
             font-size: 1.1rem;
             z-index: 3;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
         }
         
         .photo-item:hover .photo-caption {
@@ -319,8 +320,8 @@
             position: absolute;
             top: 15px;
             right: 15px;
-            background: rgba(93, 64, 55, 0.8);
-            color: #ffd54f;
+            background: rgba(0, 0, 0, 0.8);
+            color: #ff7a70;
             width: 35px;
             height: 35px;
             border-radius: 50%;
@@ -330,7 +331,7 @@
             font-weight: bold;
             font-size: 1rem;
             z-index: 3;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
         }
         
         /* Modal para visualizar foto en grande */
@@ -358,8 +359,8 @@
             max-width: 85%;
             max-height: 85%;
             border-radius: 15px;
-            box-shadow: 0 0 60px rgba(255, 215, 0, 0.6);
-            border: 4px solid #ffd54f;
+            box-shadow: 0 0 60px rgba(255, 59, 48, 0.6);
+            border: 4px solid #ff7a70;
             animation: modalAppear 0.5s ease-out;
         }
         
@@ -381,24 +382,24 @@
             color: white;
             font-size: 40px;
             cursor: pointer;
-            background: #ffd700;
+            background: #ff3b30;
             width: 60px;
             height: 60px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #000;
+            color: #fff;
             font-weight: bold;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             z-index: 2001;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
         }
         
         .close-modal:hover {
             transform: scale(1.15) rotate(90deg);
-            background: #5d4037;
-            color: #ffd54f;
+            background: #fff;
+            color: #ff3b30;
         }
         
         .modal-nav {
@@ -413,8 +414,8 @@
         }
         
         .nav-btn {
-            background: rgba(255, 215, 0, 0.9);
-            color: #5d4037;
+            background: rgba(255, 59, 48, 0.9);
+            color: #fff;
             border: none;
             width: 70px;
             height: 70px;
@@ -425,12 +426,12 @@
             justify-content: center;
             align-items: center;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
         }
         
         .nav-btn:hover {
-            background: #5d4037;
-            color: #ffd54f;
+            background: #fff;
+            color: #ff3b30;
             transform: scale(1.15);
         }
         
@@ -439,35 +440,35 @@
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(93, 64, 55, 0.95);
-            color: #ffd54f;
+            background: rgba(0, 0, 0, 0.95);
+            color: #ff7a70;
             padding: 20px 40px;
             border-radius: 40px;
             font-weight: 700;
             text-align: center;
             max-width: 85%;
             font-size: 1.3rem;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
             z-index: 2001;
         }
         
         footer {
             text-align: center;
             padding: 30px;
-            color: #8d6e63;
+            color: #ff7a70;
             font-size: 1.2rem;
             max-width: 1300px;
             width: 100%;
-            background: rgba(255, 253, 231, 0.9);
+            background: rgba(0, 0, 0, 0.9);
             border-radius: 20px;
-            border: 3px solid #ffd54f;
-            box-shadow: 0 10px 30px rgba(140, 110, 0, 0.25);
+            border: 3px solid #ff3b30;
+            box-shadow: 0 10px 30px rgba(200, 0, 0, 0.3);
         }
         
         .memory-quote {
             font-family: 'Dancing Script', cursive;
             margin-top: 15px;
-            color: #5d4037;
+            color: #ff7a70;
             font-size: 1.8rem;
             font-weight: 600;
         }
@@ -576,50 +577,50 @@
             </a>
             <div class="header-content">
                 <h1>Nuestros Momentos</h1>
-                <div class="date">21 de Septiembre</div>
+                <div class="date">Para Alicia, mi amor</div>
             </div>
         </header>
         
         <div class="gallery-container">
             <div class="gallery-intro">
-                <p>Estos son algunos de nuestros momentos que hemos compartido los dos fueron momentos bonitos y inolvidables. Haz clic en cualquier foto para verla en grande.</p>
+                <p>Estos son algunos de nuestros momentos especiales que hemos compartido juntos. Cada instante a tu lado se convierte en un recuerdo invaluable. Haz clic en cualquier foto para verla en grande.</p>
             </div>
             
             <div class="photo-grid">
                 <div class="photo-item" data-index="1">
                     <div class="photo-number">1</div>
-                    <div class="photo-placeholder">📸</div>
-                    <div class="photo-caption">El día que te acompañe a tu casita después del voluntariado</div>
+                    <div class="photo-placeholder">❤️</div>
+                    <div class="photo-caption">Foto haciendo ojito</div>
                 </div>
                 
                 <div class="photo-item" data-index="2">
                     <div class="photo-number">2</div>
-                    <div class="photo-placeholder">📸</div>
-                    <div class="photo-caption">El día que fui a verte en tus prácticas</div>
+                    <div class="photo-placeholder">❤️</div>
+                    <div class="photo-caption">El amor de mi vida</div>
                 </div>
                 
                 <div class="photo-item" data-index="3">
                     <div class="photo-number">3</div>
-                    <div class="photo-placeholder">📸</div>
-                    <div class="photo-caption">Cuando estábamos en el TS</div>
+                    <div class="photo-placeholder">❤️</div>
+                    <div class="photo-caption">Con la chica que me gusta</div>
                 </div>
                 
                 <div class="photo-item" data-index="4">
                     <div class="photo-number">4</div>
-                    <div class="photo-placeholder">📸</div>
-                    <div class="photo-caption">Yo saliendo de prácticas y tu del voluntariado</div>
+                    <div class="photo-placeholder">❤️</div>
+                    <div class="photo-caption">Los 2 juntos</div>
                 </div>
                 
                 <div class="photo-item" data-index="5">
                     <div class="photo-number">5</div>
-                    <div class="photo-placeholder">📸</div>
-                    <div class="photo-caption">Llendonos a comer salchipollo</div>
+                    <div class="photo-placeholder">❤️</div>
+                    <div class="photo-caption">Con la Ali de 13 añitos</div>
                 </div>
                 
                 <div class="photo-item" data-index="6">
                     <div class="photo-number">6</div>
-                    <div class="photo-placeholder">📸</div>
-                    <div class="photo-caption">Con mi hermanita hermosa juntos para siempre</div>
+                    <div class="photo-placeholder">❤️</div>
+                    <div class="photo-caption">Mi persona favorita, mi amor Alicia</div>
                 </div>
             </div>
         </div>
@@ -637,8 +638,8 @@
     </div>
     
     <footer>
-        <p>Creado con 💛 para ti - 2025</p>
-        <p class="memory-quote">"Los momentos más simples se convierten en los recuerdos más valiosos"</p>
+        <p>Creado con ❤️ para Alicia - 2025</p>
+        <p class="memory-quote">"Cada momento a tu lado se convierte en mi recuerdo favorito"</p>
     </footer>
 
     <script>

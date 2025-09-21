@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestro Año Especial - 21 de Septiembre</title>
+    <title>Para Alicia - Nuestro Amor</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -18,11 +18,12 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: linear-gradient(45deg, #fff8e1, #ffecb3, #ffd54f);
+            background: linear-gradient(45deg, #1a0000, #2a0000, #1a0000);
             background-size: 400% 400%;
             animation: gradientBG 12s ease infinite;
             padding: 20px;
             overflow-x: hidden;
+            color: #fff;
         }
         
         @keyframes gradientBG {
@@ -35,16 +36,17 @@
             width: 100%;
             max-width: 500px;
             text-align: center;
-            background: rgba(255, 253, 231, 0.95);
+            background: rgba(0, 0, 0, 0.8);
             padding: 40px 30px;
             border-radius: 25px;
-            box-shadow: 0 20px 40px rgba(140, 110, 0, 0.25),
-                        0 0 0 4px #ffd54f,
-                        0 0 0 8px rgba(140, 110, 0, 0.15);
+            box-shadow: 0 20px 40px rgba(200, 0, 0, 0.3),
+                        0 0 0 4px #ff3b30,
+                        0 0 0 8px rgba(100, 0, 0, 0.3);
             backdrop-filter: blur(5px);
             position: relative;
             z-index: 2;
             margin: 0 auto;
+            border: 1px solid #ff3b30;
         }
         
         .header {
@@ -60,20 +62,28 @@
             transform: translateX(-50%);
             width: 100px;
             height: 3px;
-            background: linear-gradient(to right, #ffd54f, #ffc107, #ffd54f);
+            background: linear-gradient(to right, #ff3b30, #ff7a70, #ff3b30);
             border-radius: 3px;
         }
         
         h1 {
-            color: #5d4037;
+            color: #ff7a70;
             margin-bottom: 10px;
             font-weight: 700;
             font-size: 32px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.3);
+        }
+        
+        .name {
+            color: #ff3b30;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 10px 0;
+            text-shadow: 0 0 10px rgba(255, 59, 48, 0.5);
         }
         
         .date {
-            color: #8d6e63;
+            color: #ff7a70;
             font-size: 18px;
             font-weight: 500;
             letter-spacing: 1px;
@@ -91,12 +101,12 @@
             position: absolute;
             width: 140px;
             height: 120px;
-            background: linear-gradient(145deg, #ffc107, #ffd54f, #ffc107);
+            background: linear-gradient(145deg, #ff3b30, #ff5e54, #ff3b30);
             border-radius: 15px;
-            box-shadow: 0 10px 0 #e65100, 
-                        inset 0 -5px 0 rgba(230, 81, 0, 0.5),
-                        0 0 20px rgba(255, 193, 7, 0.6);
-            border: 3px solid #5d4037;
+            box-shadow: 0 10px 0 #b30000, 
+                        inset 0 -5px 0 rgba(179, 0, 0, 0.5),
+                        0 0 20px rgba(255, 59, 48, 0.6);
+            border: 3px solid #330000;
             top: 60px;
             left: 20px;
             z-index: 2;
@@ -108,7 +118,7 @@
             position: absolute;
             width: 100px;
             height: 100px;
-            border: 12px solid #5d4037;
+            border: 12px solid #330000;
             border-top: 12px solid transparent;
             border-radius: 50%;
             top: -20px;
@@ -116,8 +126,8 @@
             transform-origin: top center;
             animation: lockShake 3s infinite ease-in-out;
             z-index: 1;
-            box-shadow: 0 5px 0 #3e2723, 
-                        inset 0 -10px 0 rgba(62, 39, 35, 0.3);
+            box-shadow: 0 5px 0 #1a0000, 
+                        inset 0 -10px 0 rgba(26, 0, 0, 0.3);
         }
         
         .lock-shackle::before {
@@ -125,10 +135,10 @@
             position: absolute;
             width: 20px;
             height: 30px;
-            background: #ffd54f;
+            background: #ff5e54;
             top: -12px;
             left: 30px;
-            border: 3px solid #5d4037;
+            border: 3px solid #330000;
             border-radius: 5px;
         }
         
@@ -141,7 +151,7 @@
             position: absolute;
             width: 30px;
             height: 40px;
-            background: #5d4037;
+            background: #330000;
             border-radius: 15px;
             top: 85px;
             left: 75px;
@@ -154,7 +164,7 @@
             position: absolute;
             width: 15px;
             height: 20px;
-            background: #ffd54f;
+            background: #ff5e54;
             border-radius: 7px;
             top: 10px;
             left: 7.5px;
@@ -168,33 +178,36 @@
         input {
             width: 100%;
             padding: 18px 25px;
-            border: 3px solid #ffd54f;
+            border: 3px solid #ff3b30;
             border-radius: 15px;
             font-size: 22px;
             text-align: center;
             outline: none;
             transition: all 0.4s;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(0, 0, 0, 0.7);
             font-weight: 600;
-            color: #5d4037;
-            box-shadow: 0 5px 15px rgba(140, 110, 0, 0.2);
+            color: #fff;
+            box-shadow: 0 5px 15px rgba(200, 0, 0, 0.3);
+            letter-spacing: 8px;
+            font-family: monospace;
         }
         
         input::placeholder {
-            color: #bcaaa4;
+            color: #ff7a70;
             font-weight: 500;
+            letter-spacing: normal;
         }
         
         input:focus {
-            border-color: #ffab00;
-            box-shadow: 0 0 20px rgba(255, 171, 0, 0.5),
-                        inset 0 0 10px rgba(255, 235, 159, 0.3);
+            border-color: #ff7a70;
+            box-shadow: 0 0 20px rgba(255, 122, 112, 0.5),
+                        inset 0 0 10px rgba(255, 122, 112, 0.3);
             transform: scale(1.02);
         }
         
         button {
-            background: linear-gradient(to right, #ffc107, #ff9800);
-            color: #5d4037;
+            background: linear-gradient(to right, #ff3b30, #ff5e54);
+            color: #fff;
             border: none;
             padding: 18px 35px;
             border-radius: 15px;
@@ -202,24 +215,24 @@
             font-weight: 700;
             cursor: pointer;
             transition: all 0.4s;
-            box-shadow: 0 8px 0 #e65100, 
-                        0 15px 25px rgba(230, 81, 0, 0.35);
+            box-shadow: 0 8px 0 #b30000, 
+                        0 15px 25px rgba(179, 0, 0, 0.35);
             letter-spacing: 1px;
             position: relative;
             overflow: hidden;
-            border: 2px solid #5d4037;
+            border: 2px solid #330000;
         }
         
         button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 0 #e65100, 
-                        0 20px 30px rgba(230, 81, 0, 0.4);
+            box-shadow: 0 12px 0 #b30000, 
+                        0 20px 30px rgba(179, 0, 0, 0.4);
         }
         
         button:active {
             transform: translateY(2px);
-            box-shadow: 0 5px 0 #e65100, 
-                        0 10px 20px rgba(230, 81, 0, 0.3);
+            box-shadow: 0 5px 0 #b30000, 
+                        0 10px 20px rgba(179, 0, 0, 0.3);
         }
         
         button::before {
@@ -240,7 +253,7 @@
         
         .message {
             margin-top: 25px;
-            color: #e65100;
+            color: #ff7a70;
             font-weight: 600;
             min-height: 30px;
             font-size: 18px;
@@ -250,7 +263,7 @@
         .hint {
             margin-top: 20px;
             font-size: 16px;
-            color: #8d6e63;
+            color: #ff7a70;
             font-style: italic;
         }
         
@@ -277,7 +290,7 @@
         .heart {
             position: absolute;
             font-size: 20px;
-            color: #ffab00;
+            color: #ff3b30;
             opacity: 0;
             animation: floatHeart 10s linear infinite;
         }
@@ -301,28 +314,28 @@
             }
         }
         
-        .sun {
+        .moon {
             position: absolute;
             top: 40px;
             right: 40px;
             width: 80px;
             height: 80px;
-            background: #ffd54f;
+            background: #fff;
             border-radius: 50%;
-            box-shadow: 0 0 40px #ffc107, 
-                        0 0 80px #ffc107,
-                        0 0 120px rgba(255, 193, 7, 0.5);
-            animation: pulseSun 4s infinite alternate;
+            box-shadow: 0 0 40px #fff, 
+                        0 0 80px #ff3b30,
+                        0 0 120px rgba(255, 59, 48, 0.5);
+            animation: pulseMoon 4s infinite alternate;
         }
         
-        @keyframes pulseSun {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
+        @keyframes pulseMoon {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.1); opacity: 1; }
         }
         
         .footer {
             margin-top: 30px;
-            color: #8d6e63;
+            color: #ff7a70;
             font-size: 14px;
         }
         
@@ -331,7 +344,7 @@
             position: fixed;
             width: 12px;
             height: 12px;
-            background-color: #ffd54f;
+            background-color: #ff3b30;
             opacity: 0;
             z-index: 1000;
             border-radius: 2px;
@@ -346,6 +359,10 @@
                 font-size: 26px;
             }
             
+            .name {
+                font-size: 24px;
+            }
+            
             .lock-container {
                 transform: scale(0.9);
             }
@@ -355,7 +372,11 @@
                 padding: 15px 20px;
             }
             
-            .sun {
+            input {
+                letter-spacing: 6px;
+            }
+            
+            .moon {
                 top: 20px;
                 right: 20px;
                 width: 60px;
@@ -366,11 +387,13 @@
 </head>
 <body>
     <div class="floating-hearts" id="hearts"></div>
-    <div class="sun"></div>
+    <div class="moon"></div>
     
     <div class="container">
         <div class="header">
-            <h1>Ingresa el año que nos conocimos</h1>
+            <h1>Para mi Amor</h1>
+            <div class="name">Alicia</div>
+            <div class="date">Ingresa nuestra fecha especial</div>
         </div>
         
         <div class="lock-container">
@@ -380,21 +403,21 @@
         </div>
         
         <div class="input-container">
-            <input type="password" id="yearInput" placeholder="****" inputmode="numeric">
+            <input type="password" id="dateInput" placeholder="........" inputmode="numeric" maxlength="8">
             <p class="message" id="message"></p>
         </div>
         
         <button id="unlockBtn">
-            <i class="fas fa-lock-open"></i> Abrir Candado
+            <i class="fas fa-lock-open"></i> Desbloquear Nuestro Amor
         </button>
         
-        <p class="hint">Pista: Es el año cuando nos vimos la primera vez💛</p>
-        <p class="footer">Solo para ti, por el día día especial</p>
+        <p class="hint">Pista: Es el día que comenzó nuestra historia 💖 (8 dígitos)</p>
+        <p class="footer">Solo para ti, mi amor</p>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const yearInput = document.getElementById('yearInput');
+            const dateInput = document.getElementById('dateInput');
             const message = document.getElementById('message');
             const lockContainer = document.querySelector('.lock-container');
             const unlockBtn = document.getElementById('unlockBtn');
@@ -408,16 +431,16 @@
             function createHeart(i) {
                 const heart = document.createElement('div');
                 heart.className = 'heart';
-                heart.innerHTML = '💛';
+                heart.innerHTML = '❤️';
                 heart.style.left = Math.random() * 100 + 'vw';
                 heart.style.animationDelay = Math.random() * 10 + 's';
                 heartsContainer.appendChild(heart);
             }
             
             unlockBtn.addEventListener('click', function() {
-                if (yearInput.value === '2024') {
-                    message.textContent = '¡Correcto! Nuestra amistad se desbloquea...';
-                    message.style.color = '#388e3c';
+                if (dateInput.value === '06102023') {
+                    message.textContent = '¡Correcto! Nuestro amor se desbloquea...';
+                    message.style.color = '#ff7a70';
                     lockContainer.classList.add('unlocked');
                     
                     // Efecto de confeti
@@ -428,27 +451,37 @@
                         window.location.href = 'redireccionando.html';
                     }, 2000);
                 } else {
-                    message.textContent = 'Año incorrecto. Intenta de nuevo.';
-                    message.style.color = '#e65100';
+                    message.textContent = 'Fecha incorrecta. Intenta de nuevo.';
+                    message.style.color = '#ff3b30';
                     
                     // Efecto de vibración
-                    yearInput.style.animation = 'shake 0.5s';
+                    dateInput.style.animation = 'shake 0.5s';
                     setTimeout(() => {
-                        yearInput.style.animation = '';
+                        dateInput.style.animation = '';
                     }, 500);
                 }
             });
             
             // Permitir enviar con Enter
-            yearInput.addEventListener('keypress', function(e) {
+            dateInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
                     unlockBtn.click();
                 }
             });
             
+            // Solo permitir números
+            dateInput.addEventListener('input', function(e) {
+                e.target.value = e.target.value.replace(/\D/g, '');
+                
+                // Limitar la longitud a 8 caracteres
+                if (e.target.value.length > 8) {
+                    e.target.value = e.target.value.slice(0, 8);
+                }
+            });
+            
             // Efecto de confeti
             function createConfetti() {
-                const colors = ['#ffd54f', '#ffc107', '#ffab00', '#ff8f00', '#ff6f00'];
+                const colors = ['#ff3b30', '#ff5e54', '#ff7a70', '#ff9d97', '#ffc0bb'];
                 
                 for (let i = 0; i < 150; i++) {
                     const confetti = document.createElement('div');
@@ -495,13 +528,6 @@
                 }
             `;
             document.head.appendChild(style);
-            
-            // Cambiar el tipo de input para que no se vea la contraseña
-            yearInput.addEventListener('input', function() {
-                if (this.value.length > 4) {
-                    this.value = this.value.slice(0, 4);
-                }
-            });
         });
     </script>
 </body>
